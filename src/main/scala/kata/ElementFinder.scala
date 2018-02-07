@@ -44,7 +44,6 @@ object PeriodicTable {
   val elements = csv.getLines.map(line => {
     val cols = line.split(",").map(_.trim)
     Element(cols(1), cols(0).toLowerCase())
-  }).toList
+  }).toList.sortBy(-_.symbol.length)
 
-  // println(elements)
 }
