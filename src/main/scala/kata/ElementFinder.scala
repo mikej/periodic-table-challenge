@@ -1,9 +1,9 @@
 package kata
 
-sealed trait Answer
 case class Element(symbol: String, name: String)
-case class NoSolution() extends Answer
 
+sealed trait Answer
+case class NoSolution() extends Answer
 case class PossibleAnswer(elements: List[Element]) extends Answer {
   override def toString(): String = {
     s"${elements.map(_.symbol).mkString} (${elements.map(_.name).mkString(" ")})"
